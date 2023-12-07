@@ -8,8 +8,10 @@ import { useEffect } from 'react'
  * @returns
  */
 export default function GoogleAdsense() {
+  const ADSENSE_GOOGLE_ID = siteConfig('ADSENSE_GOOGLE_ID')
+
   const initGoogleAdsense = () => {
-    loadExternalResource(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${siteConfig('ADSENSE_GOOGLE_ID')}`, 'js').then(url => {
+    loadExternalResource(`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_GOOGLE_ID}`, 'js').then(url => {
       setTimeout(() => {
         const ads = document.getElementsByClassName('adsbygoogle')
         const adsbygoogle = window.adsbygoogle
